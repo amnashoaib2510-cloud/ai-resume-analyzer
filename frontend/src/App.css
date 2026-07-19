@@ -1,0 +1,122 @@
+.app {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #555;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+}
+
+.upload-box {
+  display: block;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+
+.upload-box:hover {
+  border-color: #6366f1;
+}
+
+.jd-input {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 16px;
+}
+
+.analyze-btn {
+  width: 100%;
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.analyze-btn:hover:not(:disabled) {
+  background: #4f46e5;
+}
+
+.analyze-btn:disabled {
+  background: #a5a5f5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ef4444;
+  margin-bottom: 12px;
+}
+
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.score-circle {
+  min-width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 6px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.score-circle small {
+  font-size: 11px;
+  color: #888;
+  font-weight: 400;
+}
+
+.result-section {
+  margin-bottom: 20px;
+}
+
+.result-section h3 {
+  margin-bottom: 8px;
+}
+
+.result-section ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.result-section li {
+  margin-bottom: 6px;
+  color: #333;
+}
