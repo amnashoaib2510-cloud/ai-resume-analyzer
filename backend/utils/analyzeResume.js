@@ -2,6 +2,9 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+// Model name can be changed from the hosting dashboard (GEMINI_MODEL) without editing code.
+const MODEL_NAME = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
+
 /**
  * Sends resume text to Gemini and returns a structured analysis.
  * @param {string} resumeText - Raw text extracted from the resume PDF
@@ -9,7 +12,11 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
  * @returns {Promise<Object>} Structured analysis object
  */
 async function analyzeResume(resumeText, jobDescription = '') {
- const model = genAI.getGenerativeModel({ model: 'gemini-3.5-flash' });
+  const model = genAI.getGenerativeModel({
+    model: MODEL_NAME,
+    generationConfig: { responseMimeType: 'application/json' },
+  });
+
   const jdSection = jobDescription
     ? `\n\nCompare the resume against this target job/scholarship description:\n${jobDescription}`
     : '';
@@ -37,7 +44,7 @@ ${resumeText}${jdSection}`;
   const result = await model.generateContent(prompt);
   const responseText = result.response.text();
 
-  // Gemini sometimes wraps JSON in markdown code fences - strip them
+  // Safety net: strip markdown code fences if the model adds them anyway
   const cleaned = responseText.replace(/```json|```/g, '').trim();
 
   try {
