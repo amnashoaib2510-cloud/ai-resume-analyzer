@@ -130,4 +130,5 @@ ai-resume-analyzer/
 ## Author
 
 Amna Shoaib, BS Information Technology, MNS University of Agriculture, Multan, Pakistan
+
 GitHub: [@amnashoaib2510-cloud](https://github.com/amnashoaib2510-cloud)
