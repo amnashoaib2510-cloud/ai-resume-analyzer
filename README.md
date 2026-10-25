@@ -11,6 +11,10 @@ A full-stack MERN application that analyzes resumes with an AI model (Google Gem
 **Live demo:** https://ai-resume-analyzer-tau-gules.vercel.app
 (The backend runs on Render's free tier, so the first request may take 30-60 seconds to wake up.)
 
+![Home page](./screenshots/home.png)
+![Analysis result](./screenshots/analysis1.png)
+![Analysis details](./screenshots/analysis2.png)
+
 ## Tech Stack
 
 - **Frontend**: React
